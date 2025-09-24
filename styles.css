@@ -26,9 +26,8 @@ header .logo-container {
 }
 
 header .university-logo {
-    width: 120px;
+    width: 150px;   /* tamaño más grande del logo */
     height: auto;
-    filter: brightness(0) invert(1);
 }
 
 header h1 {
@@ -134,3 +133,4 @@ footer {
     padding-top: 30px;
     border-top: 2px solid rgba(255, 255, 255, 0.1);
 }
+

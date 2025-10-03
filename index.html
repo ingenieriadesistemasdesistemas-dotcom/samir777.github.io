@@ -5,11 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Repositorio Académico - Base de Datos II</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Librería de iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <header>
+
+    <!-- 🔹 NAVBAR -->
+    <nav class="navbar">
+        <img src="logo upla.png" alt="Logo UPLA" class="logo">
+        <ul>
+            <li><a href="#inicio" class="active"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="#semanas"><i class="fas fa-calendar"></i> Semanas</a></li>
+            <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
+            <li><a href="#login"><i class="fas fa-user"></i> Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- 🔹 SECCIÓN INICIO -->
+    <header id="inicio">
         <div class="logo-container">
-            <!-- Asegúrate de que tu logo sea PNG con fondo transparente -->
             <img src="logo upla.png" alt="Logo Universidad" class="university-logo">
         </div>
         <div class="header-text">
@@ -24,7 +38,8 @@
         <p><strong>Estudiante:</strong> Wilson Samir Flores Estrella </p>
     </div>
 
-    <section class="week-container">
+    <!-- 🔹 SECCIÓN SEMANAS -->
+    <section id="semanas" class="week-container">
         <div class="week">
             <h3>Semana 1</h3>
             <p>Título de la semana: Introducción al Tema</p>
@@ -47,12 +62,36 @@
         </div>
     </section>
 
+    <!-- 🔹 SECCIÓN CONTACTO -->
+    <section id="contacto" class="seccion">
+        <h2>Contacto</h2>
+        <form>
+            <label>Nombre:</label>
+            <input type="text" required>
+            <label>Email:</label>
+            <input type="email" required>
+            <label>Mensaje:</label>
+            <textarea required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- 🔹 SECCIÓN LOGIN -->
+    <section id="login" class="seccion">
+        <h2>Iniciar Sesión</h2>
+        <form>
+            <label>Usuario:</label>
+            <input type="text" required>
+            <label>Contraseña:</label>
+            <input type="password" required>
+            <button type="submit">Ingresar</button>
+        </form>
+    </section>
+
+    <!-- 🔹 FOOTER -->
     <footer>
         <p>&copy; 2025 Universidad Peruana Los Andes</p>
     </footer>
+
 </body>
 </html>
-
-
-
-

@@ -8,46 +8,91 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #1a1a1a;
     color: #f1f1f1;
-    padding: 30px;
     line-height: 1.6;
+    /* Eliminamos el padding del body para que el navbar pueda ocupar todo el ancho */
 }
 
-header {
-    text-align: center;
-    margin-bottom: 40px;
-    padding-bottom: 30px;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-}
-
-header .logo-container {
+/* ----------------------------------- */
+/* 🔹 NAVBAR (Barra de Navegación) */
+/* ----------------------------------- */
+.navbar {
+    background-color: #222; /* Fondo oscuro */
+    padding: 15px 30px;
     display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
+    justify-content: space-between; /* Logo a la izquierda, menú a la derecha */
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-header .university-logo {
-    width: 250px;   /* tamaño más grande del logo */
-    height: auto;
+.navbar .logo {
+    height: 40px; /* Tamaño más pequeño para el logo de la barra */
+    width: auto;
 }
 
-header h1 {
-    font-size: 2.8rem;
+.navbar ul {
+    list-style: none;
+    display: flex; /* Elementos del menú en línea */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin-left: 25px; /* Espacio entre los elementos del menú */
+}
+
+.navbar ul li a {
+    text-decoration: none;
     color: #00bcd4;
-    margin: 10px 0;
-    text-shadow: 0 0 10px rgba(0, 188, 212, 0.8);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 8px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
 }
 
-header h2 {
-    font-size: 1.8rem;
+.navbar ul li a i {
+    margin-right: 8px; /* Espacio entre el ícono y el texto */
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+    background-color: #00bcd4;
+    color: #1a1a1a;
+}
+
+/* ----------------------------------- */
+/* 🔹 TÍTULO PRINCIPAL (Central) */
+/* ----------------------------------- */
+.main-title {
+    text-align: center;
+    padding: 50px 20px;
+    margin-bottom: 30px;
+}
+
+.main-title h1 {
+    font-size: 3rem;
+    color: #00bcd4;
+    margin: 0 0 5px 0;
+    text-shadow: 0 0 15px rgba(0, 188, 212, 0.8);
+}
+
+.main-title h2 {
+    font-size: 1.5rem;
     color: #90caf9;
-    margin-bottom: 5px;
+    margin: 0 0 10px 0;
 }
 
-header p {
-    font-size: 1.2rem;
+.main-title p {
+    font-size: 1.1rem;
     color: #e0f7fa;
 }
 
+
+/* ----------------------------------- */
+/* 🔹 INFORMACIÓN DE USUARIO Y SEMANAS */
+/* ----------------------------------- */
 .user-info {
     display: flex;
     align-items: center;
@@ -57,20 +102,23 @@ header p {
 }
 
 .user-info .user-photo {
-    width: 120px;
-    height: 120px;
+    width: 80px; /* Reducimos el tamaño de la foto */
+    height: 80px;
     border-radius: 50%;
-    border: 5px solid #00bcd4;
+    border: 3px solid #00bcd4;
     object-fit: cover;
 }
 
 .user-info p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #e0f7fa;
     font-weight: 500;
 }
 
 .week-container {
+    max-width: 1200px; /* Limita el ancho del contenido central */
+    margin: 0 auto;
+    padding: 0 20px;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 30px;
@@ -84,40 +132,38 @@ header p {
 }
 
 .week {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(12px);
-    border-radius: 15px;
-    padding: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: rgba(255, 255, 255, 0.08); /* Fondo más sutil */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .week:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+    transform: translateY(-3px);
+    background-color: rgba(0, 188, 212, 0.1);
 }
 
 .week h3 {
     color: #00bcd4;
-    font-size: 1.7rem;
-    margin-bottom: 15px;
-    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 
 .week p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 15px;
     color: #b2ebf2;
 }
 
 .work-link {
+    display: inline-block;
     color: #4caf50;
     text-decoration: none;
     font-weight: 500;
     border: 2px solid #4caf50;
-    padding: 8px 18px;
+    padding: 6px 15px;
     border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .work-link:hover {
@@ -125,13 +171,76 @@ header p {
     color: #fff;
 }
 
-footer {
-    text-align: center;
-    margin-top: 50px;
-    color: #b2ebf2;
-    font-size: 1rem;
-    padding-top: 30px;
-    border-top: 2px solid rgba(255, 255, 255, 0.1);
+/* ----------------------------------- */
+/* 🔹 SECCIONES DE FORMULARIO (Contacto/Login) */
+/* ----------------------------------- */
+.seccion {
+    max-width: 500px;
+    margin: 60px auto 0 auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
 }
 
+.seccion h2 {
+    text-align: center;
+    color: #00bcd4;
+    margin-bottom: 25px;
+}
 
+.seccion form label {
+    display: block;
+    margin: 15px 0 5px;
+    font-weight: 500;
+    color: #b2ebf2;
+}
+
+.seccion form input[type="text"],
+.seccion form input[type="email"],
+.seccion form input[type="password"],
+.seccion form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.seccion form button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 25px;
+    background-color: #00bcd4;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.seccion form button:hover {
+    background-color: #00e5ff;
+}
+
+/* ----------------------------------- */
+/* 🔹 FOOTER */
+/* ----------------------------------- */
+footer {
+    text-align: center;
+    margin-top: 80px;
+    color: #b2ebf2;
+    font-size: 0.9rem;
+    padding: 20px;
+    background-color: #222;
+}
+
+/* Ajustes para evitar que las secciones de formulario estén muy pegadas si se encuentran en la misma línea */
+.form-section:not(:last-child) {
+    margin-bottom: 40px;
+}
